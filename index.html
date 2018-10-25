@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+  <title>Unmask password</title>
+
+  <meta charset="utf-8">
+
+  <!-- Responsive markup -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+
+    .see-password-icon:before {
+      content: 'i';
+    }
+
+    .see-password-icon span {
+      display: block;
+      position: absolute;
+      left: -99999rem;
+      opacity: 0;
+    }
+  </style>
+
+</head>
+
+<body>
+
+<main id="a_content" role="main">
+  <h1>Unmask password</h1>
+  <input type="password" id="password" value="hidden password">
+  <button type="button" class="see-password" data-unmask="password"><span>Démasquer le mot de passe</span></button>
+
+  <h2>Avec tooltip&nbsp;:</h2>
+  <input type="password" id="password-2" value="hidden password">
+  <button type="button" class="see-password-icon" data-unmask="password-2"><span>Démasquer le mot de passe</span></button>
+</main>
+
+<script src="unmask-password.js"></script>
+
+<script>
+
+  unmaskPassword('.see-password', {
+    'title': false,
+    'unmask_label': 'Démasquer le mot de passe',
+    'mask_label': 'Masquer le mot de passe'
+  });
+
+  unmaskPassword('.see-password-icon', {
+    'title': true,
+    'unmask_label': 'Démasquer le mot de passe',
+    'mask_label': 'Masquer le mot de passe'
+  });
+
+</script>
+
+</body>
+</html>
