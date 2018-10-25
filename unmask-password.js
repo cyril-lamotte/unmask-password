@@ -76,7 +76,6 @@ var unmaskPassword = function(trigger_selector, options) {
    */
   var addListeners = function() {
 
-    // Add events.
     p.trigger.addEventListener('click', function(event) {
 
       event.preventDefault();
